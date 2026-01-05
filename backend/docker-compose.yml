@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: surya_backend
+    restart: always
+    ports:
+      - "15021:15021"
+    environment:
+      - PORT=15021
+      - JWT_SECRET=supersecretkey123
+      - APP_BASE_URL=https://ykd.dev:15021
+    volumes:
+      - ./data:/app/data
+      - ./uploads:/app/uploads
