@@ -6,11 +6,11 @@ services:
     container_name: surya_backend
     restart: always
     ports:
-      - "15021:15021"
+      - "15026:15026"
     environment:
-      - PORT=15021
+      - PORT=15026
       - JWT_SECRET=supersecretkey123
-      - APP_BASE_URL=https://ykd.dev:15021
+      - APP_BASE_URL=https://ykd.dev:15026
     volumes:
       - ./data:/app/data
       - ./uploads:/app/uploads

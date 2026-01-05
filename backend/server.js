@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 const db = require('./database.js');
 
 const app = express();
-const PORT = process.env.PORT || 15021; 
+const PORT = process.env.PORT || 15026; 
 const JWT_SECRET = process.env.JWT_SECRET || 'anosukanugas-secretkey';
 
 app.use(cors({ 
