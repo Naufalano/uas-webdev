@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://ykd.dev:15026'; 
+const BASE_URL = 'http://localhost:15026'; 
 
 const api = axios.create({
   baseURL: BASE_URL,
