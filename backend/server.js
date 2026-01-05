@@ -10,7 +10,11 @@ const app = express();
 const PORT = process.env.PORT || 15021; 
 const JWT_SECRET = process.env.JWT_SECRET || 'anosukanugas-secretkey';
 
-app.use(cors({ origin: '*' })); 
+app.use(cors({ 
+  origin: '*', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'] 
+})); 
 app.use(express.json());
 
 const uploadsDir = path.join(__dirname, 'uploads');
