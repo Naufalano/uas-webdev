@@ -7,6 +7,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { getProducts } from '../services/api';
 import { Product } from '../types';
 import { Colors } from '../constants/Colors';
+import { useNavigation } from '@react-navigation/native';
+import { Pressable } from 'react-native';
 
 const { width } = Dimensions.get('window');
 const CARD_HEIGHT = 320;
@@ -14,6 +16,7 @@ const CARD_HEIGHT = 320;
 export default function HomeScreen() {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+  const navigation = useNavigation<any>();
 
   useEffect(() => {
     loadData();
@@ -51,10 +54,16 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Surya Prima Jaya</Text>
+        <Pressable 
+            onLongPress={() => {
+                navigation.navigate('AdminLogin'); 
+            }}
+            delayLongPress={2000}
+        >
+            <Text style={styles.headerTitle}>Surya Prima Jaya</Text>
+        </Pressable>
       </View>
 
-      {/* Main Vertical Scroll */}
       <ScrollView contentContainerStyle={{ paddingBottom: 20 }}>
         
         <View style={styles.heroSection}>
