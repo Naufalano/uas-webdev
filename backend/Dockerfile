@@ -11,6 +11,6 @@ COPY . .
 
 RUN mkdir -p uploads data
 
-EXPOSE 15021
+EXPOSE 15026
 
 CMD ["node", "server.js"]
